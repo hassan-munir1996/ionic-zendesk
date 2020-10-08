@@ -1,0 +1,7 @@
+{
+  "name": "ionic-zendesk",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

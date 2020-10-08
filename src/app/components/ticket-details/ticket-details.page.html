@@ -1,0 +1,165 @@
+<ion-header>
+    <ion-toolbar class="toolbar-color">
+        <ion-buttons slot="end">
+            <ion-button (click)="closeModal()">
+                <ion-icon style="color: white;" size="large" name="remove-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title size="medium" class="text-style">Request Details</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="openAddCommentModal()" >
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    <div class="z-detail-container">
+        <div>
+            <div>
+                <ion-text style="font-size: large; font-weight: bold;">{{ticket.subject}}</ion-text>
+                <ion-chip style="background: #32cd32;">
+                    <ion-label style="font-weight: bold; color: white;">{{ticket.status}}</ion-label>
+                </ion-chip>
+            </div>
+        </div>
+        <div>
+            <ion-text style="color: CORNFLOWERBLUE; font-size: small;">{{ticket.created_at | date}}</ion-text>
+        </div>
+        <div style="margin-top: 2%;">
+            <ion-text style="font-size: small; color: grey;">{{ticket.description}}</ion-text>
+        </div>
+    </div>
+    <hr style="width: 90%;height: 1px; background-color: #d3d3d3;">
+    <div class="z-detail-container">
+        <div>
+            <ion-text style="font-size: x-large; font-weight: bolder;">{{ticket_comments?.length}} Comments</ion-text>
+        </div>
+        <div style="width: 100%; margin-top: 5%;" *ngIf="ticket_comments.length">
+            <div *ngFor="let comment of ticket_comments">
+
+                <div class="z-comment-box">
+                    <div class="z-comment-header">
+                        <div>
+                            <ion-avatar>
+                                <img src="../../../assets/images/profile.png">
+                            </ion-avatar>
+                        </div>
+                        <div class="z-header-inside">
+                            <div style="margin-top: 2%;">
+                                <ion-text style="font-size: medium;">{{comment?.author_details.name}}</ion-text>
+                            </div>
+                            <div>
+                                <ion-text style="font-size: smaller;">{{comment?.created_at | date}}</ion-text>
+                            </div>
+                        </div>
+                        <!-- <div>
+                            <ion-button>
+                                <ion-icon name="trash"></ion-icon>
+                            </ion-button>
+                        </div> -->
+                    </div>
+                    <div style="margin-top: 1%;">
+                        <ion-text style="font-size: small; color: grey;">{{comment?.body}}</ion-text>
+                    </div>
+                </div>
+                <hr style="width: 100%;height: 1px; background-color: #d3d3d3;">
+            </div>
+            <!-- <ion-list>
+                <ion-item *ngFor="let comment of ticket_comments">
+                    <div>
+
+                    </div>
+                </ion-item>
+            </ion-list> -->
+        </div>
+        <div style="width: 100%;" *ngIf="ticket_comments.length == 0">
+            <ion-item *ngFor="let i of [1,2,3,4,5]">
+                <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+            </ion-item>
+        </div>
+    </div>
+
+
+
+
+    <!-- <ion-card style="background-color: #FBF9F9;">
+        <ion-card-header>
+            <ion-card-subtitle>
+                <ion-text style="color: CORNFLOWERBLUE;">created at: {{ticket.created_at | date:'shortDate'}}
+                </ion-text>
+            </ion-card-subtitle>
+            <ion-card-title>{{ticket.subject}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content style="color: #353332;">{{ticket.description}}
+        </ion-card-content>
+        <ion-row class="cardfooter">
+            <ion-col>
+                <ion-chip>
+                    <ion-text style="color: CORNFLOWERBLUE;">
+                        <p>Updated at: {{ticket.created_at | date:'shortDate'}}</p>
+                    </ion-text>
+                </ion-chip>
+            </ion-col>
+            <ion-col>
+                <ion-chip style="float: right;">
+                    <ion-label color="success" style="font-weight: bold;">{{ticket.status}}</ion-label>
+                </ion-chip>
+            </ion-col>
+        </ion-row>
+    </ion-card> -->
+    <!-- <ion-list>
+        <div *ngIf="ticket_comments.length">
+            <ion-list *ngFor="let comment of ticket_comments">
+                <ion-item>
+                    <div class="">
+
+                    </div>
+
+                </ion-item>
+            </ion-list>
+
+
+
+
+ -->
+
+
+    <!-- <ion-card *ngFor="let comment of ticket_comments" style="background-color: #FBF9F9;">
+                <ion-card-header>
+                    <ion-card-subtitle>
+
+                    </ion-card-subtitle>
+                    <ion-card-title>Hassan Munir
+                        <ion-chip class="my-chip">
+
+                            {{comment.created_at | date:'shortDate'}}
+
+                        </ion-chip>
+                    </ion-card-title>
+                </ion-card-header>
+                <ion-card-content style="color: #353332;">{{comment.body}}
+                </ion-card-content>
+            </ion-card> -->
+
+    <!-- <ion-item *ngFor="let comment of ticket_comments">
+                <ion-chip>
+                    <ion-avatar>
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                    </ion-avatar>
+                    <ion-label>Hassan Munir</ion-label>
+                </ion-chip>
+                <ion-text>{{comment.body}}</ion-text>
+                <ion-chip style="float: right;">
+                    <ion-label color="success" style="font-weight: bold;">{{comment.created_at | date:'shortDate'}}
+                    </ion-label>
+                </ion-chip>
+            </ion-item> -->
+    <!-- </div>
+        <div *ngIf="ticket_comments.length == 0">
+            <ion-item *ngFor="let i of [1,2,3,4,5]">
+                <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+            </ion-item>
+        </div>
+    </ion-list> -->
+</ion-content>

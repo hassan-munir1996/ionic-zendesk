@@ -1,0 +1,57 @@
+.toolbar-color {
+    --background: #3880ff;
+}
+
+.my-chip {
+    background-image: linear-gradient( 0deg, #3880ff 0%, #3880ff 100%) !important;
+}
+
+.text-style {
+    color: white;
+    font-size: medium;
+}
+
+.z-detail-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    align-items: flex-start;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.z-comment-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0 !important;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.z-header-inside {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 !important;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.z-comment-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2%;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.z-comment-count-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 !important;
+    width: 100%;
+    justify-content: space-between;
+}

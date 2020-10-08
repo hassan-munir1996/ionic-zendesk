@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar class="toolbar-color">
+        <ion-buttons slot="end">
+            <ion-button (click)="closeModal()">
+                <ion-icon style="color: white;" size="large" name="remove-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title size="medium" class="text-style">Contact us</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div class="z-request-container">
+        <div class="z-input-container">
+            <div>
+                <ion-label position="stacked" style="font-weight: bold; color: black;">Your name</ion-label>
+            </div>
+            <div class="z-input-style">
+                <ion-input [(ngModel)]="name" type="text"></ion-input>
+            </div>
+        </div>
+        <div class="z-input-container">
+            <div>
+                <ion-label position="stacked" style="font-weight: bold; color: black;">Subject</ion-label>
+            </div>
+            <div class="z-input-style">
+                <ion-input [(ngModel)]="subject" type="text"></ion-input>
+            </div>
+        </div>
+        <div class="z-input-container">
+            <div>
+                <ion-label position="stacked" style="font-weight: bold; color: black;">How can we help you?</ion-label>
+            </div>
+            <div class="z-textarea-style">
+                <ion-textarea [(ngModel)]="description" type="text" rows="4" cols="20"></ion-textarea>
+            </div>
+        </div>
+
+    </div>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button style="color: #3880ff;" (click)="create()">
+                Send
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar class="toolbar-color">
+    <ion-title size="medium" class="text-style">Bezlio Customer Support</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openRequestModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="showSkeleton">
+    <ion-list>
+      <div style="margin: 4%;">
+        <ion-text style="font-size: x-large; font-weight: bolder;">Requested Tickets ({{tickets?.length}})</ion-text>
+      </div>
+      <div style="margin-right: 4%;">
+        <ion-item (click)="getTicketDetail(ticket.id)" *ngFor=" let ticket of tickets">
+          <ion-text style="font-size: large; font-weight: lighter;">{{ticket.subject}}</ion-text>
+          <ion-chip slot="end" style="background: #32cd32;">
+            <ion-label style="font-weight: bold; color: white;">{{ticket.status}}</ion-label>
+          </ion-chip>
+          <ion-text slot="end" style="text-align: right;">{{ticket.created_at | date:'shortDate'}}</ion-text>
+        </ion-item>
+      </div>
+    </ion-list>
+  </div>
+
+
+  <!-- <ion-card (click)="getTicketDetail(ticket.id)" style="background-color: #FBF9F9; border-radius: 20px;" *ngFor=" let ticket of tickets">
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-text style="color: CORNFLOWERBLUE;">{{ticket.created_at | date:'shortDate'}}</ion-text>
+      </ion-card-subtitle>
+      <ion-card-title>{{ticket.subject}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content style="color: #353332;">{{ticket.description}}
+    </ion-card-content>
+    <ion-row class="cardfooter">
+      <ion-col>
+        <ion-chip style="float: right; background: #32cd32;" >
+          <ion-label style="font-weight: bold; color: white;">{{ticket.status}}</ion-label>
+        </ion-chip>
+      </ion-col>
+    </ion-row>
+  </ion-card> -->
+
+  <div *ngIf="!showSkeleton">
+    <ion-list>
+      <div style="margin: 4%;">
+        <ion-text style="font-size: x-large; font-weight: bolder;">
+          <ion-skeleton-text animated style="width: 60%;"></ion-skeleton-text>
+        </ion-text>
+      </div>
+      <div style="margin-top: 5%;">
+        <ion-item *ngFor="let number of [0,1,2,3,4,5,6,7]">
+          <ion-skeleton-text animated style="width: 40%;"></ion-skeleton-text>
+          <ion-chip slot="end">
+            <ion-label>
+              <ion-skeleton-text animated style="width: 10%;"></ion-skeleton-text>
+            </ion-label>
+          </ion-chip>
+        </ion-item>
+      </div>
+    </ion-list>
+  </div>
+
+
+  <!-- <div *ngIf="!showSkeleton">
+    <ion-card *ngFor="let number of [0,1,2,3,4]">
+      <ion-card-header>
+        <ion-card-subtitle>
+          <ion-skeleton-text animated style="width: 20%;"></ion-skeleton-text>
+        </ion-card-subtitle>
+        <ion-card-title>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </p>
+      </ion-card-content>
+      <ion-row class="cardfooter">
+        <ion-col>
+          <ion-chip style="float: right;">
+            <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+          </ion-chip>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div> -->
+</ion-content>
