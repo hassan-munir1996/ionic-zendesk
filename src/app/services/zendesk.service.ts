@@ -14,24 +14,24 @@ export class ZendeskService {
     }
 
     getAllTickets(): any {
-        const headerDict = {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Authorization': 'Basic YmFraHRhd2FyYmhhdHRpNzBAZ21haWwuY29tL3Rva2VuOkNHWWRkYmNsWTIyQ1dCOHhjRTQxUjI5dnI2N2MzZklReGV2ZVRLYXY='
-        }
-        const requestOptions = {
-            headers: new HttpHeaders(headerDict)
-        };
+        // const headerDict = {
+        //     'Content-Type': 'application/json',
+        //     'Access-Control-Allow-Origin': '*',
+        //     'Authorization': 'Basic Y2lubm92YUBiZXpsLmlvL3Rva2VuOnZ4clVBUVZiZ2FPVjFBcHUxdlpoSXFNMlFXcmtPdFdKcEU4SFpjY2Q='
+        // }
+        // const requestOptions = {
+        //     headers: new HttpHeaders(headerDict)
+        // };
         let url = this._endpointService.getAllTickets;
         console.log("getAllTickets req:", url);
-        return this.http.get(url, requestOptions);
+        return this.http.get(url);
     }
 
     createTicket(ticket): any {
         const headerDict = {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
-            'Authorization': 'Basic YmFraHRhd2FyYmhhdHRpNzBAZ21haWwuY29tL3Rva2VuOkNHWWRkYmNsWTIyQ1dCOHhjRTQxUjI5dnI2N2MzZklReGV2ZVRLYXY='
+            'Authorization': 'Basic Y2lubm92YUBiZXpsLmlvL3Rva2VuOnZ4clVBUVZiZ2FPVjFBcHUxdlpoSXFNMlFXcmtPdFdKcEU4SFpjY2Q='
         }
         const requestOptions = {
             headers: new HttpHeaders(headerDict)
@@ -44,7 +44,7 @@ export class ZendeskService {
         const headerDict = {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
-            'Authorization': 'Basic YmFraHRhd2FyYmhhdHRpNzBAZ21haWwuY29tL3Rva2VuOkNHWWRkYmNsWTIyQ1dCOHhjRTQxUjI5dnI2N2MzZklReGV2ZVRLYXY='
+            'Authorization': 'Basic Y2lubm92YUBiZXpsLmlvL3Rva2VuOnZ4clVBUVZiZ2FPVjFBcHUxdlpoSXFNMlFXcmtPdFdKcEU4SFpjY2Q='
         }
         const requestOptions = {
             headers: new HttpHeaders(headerDict)
@@ -58,7 +58,7 @@ export class ZendeskService {
         const headerDict = {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
-            'Authorization': 'Basic YmFraHRhd2FyYmhhdHRpNzBAZ21haWwuY29tL3Rva2VuOkNHWWRkYmNsWTIyQ1dCOHhjRTQxUjI5dnI2N2MzZklReGV2ZVRLYXY='
+            'Authorization': 'Basic Y2lubm92YUBiZXpsLmlvL3Rva2VuOnZ4clVBUVZiZ2FPVjFBcHUxdlpoSXFNMlFXcmtPdFdKcEU4SFpjY2Q='
         }
         const requestOptions = {
             headers: new HttpHeaders(headerDict)
@@ -71,7 +71,7 @@ export class ZendeskService {
         const headerDict = {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
-            'Authorization': 'Basic YmFraHRhd2FyYmhhdHRpNzBAZ21haWwuY29tL3Rva2VuOkNHWWRkYmNsWTIyQ1dCOHhjRTQxUjI5dnI2N2MzZklReGV2ZVRLYXY='
+            'Authorization': 'Basic Y2lubm92YUBiZXpsLmlvL3Rva2VuOnZ4clVBUVZiZ2FPVjFBcHUxdlpoSXFNMlFXcmtPdFdKcEU4SFpjY2Q='
         }
         const requestOptions = {
             headers: new HttpHeaders(headerDict)

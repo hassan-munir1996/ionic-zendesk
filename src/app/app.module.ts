@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { EndpointService } from './services/endpoint.service';
 import { ZendeskService } from './services/zendesk.service';
 import { HttpClientModule } from '@angular/common/http';
+import { zendeskInterceptorProviders } from './interceptors/interceptors';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     EndpointService,
     ZendeskService,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    zendeskInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

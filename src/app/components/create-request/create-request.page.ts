@@ -36,7 +36,7 @@ export class CreateRequestPage implements OnInit {
                 "requester": {
                     "name": this.name,
                     // "email": 'hassan.munir1996@gmail.com'
-                    "email": 'bakhtawarbhatti70@gmail.com'
+                    "email": 'cinnova@bezl.io'
                 },
                 "subject": this.subject,
                 "comment": { "body": this.description }

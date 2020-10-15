@@ -7,7 +7,7 @@ export class EndpointService {
     constructor() {
     }
 
-    BASE_URL = 'https://cinnova4240.zendesk.com/api/v2/';
+    BASE_URL = 'https://cinnova4459.zendesk.com/api/v2/';
 
     getAllTickets = this.BASE_URL + 'requests.json';
     createTicket = this.BASE_URL + 'requests';
